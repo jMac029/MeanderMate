@@ -1,0 +1,24 @@
+{
+  "name": "meandermate",
+  "version": "1.0.0",
+  "description": "Node & Express app for finding Meander Mates to travel with",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jMac029/MeanderMate.git"
+  },
+  "author": "jMac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jMac029/MeanderMate/issues"
+  },
+  "homepage": "https://github.com/jMac029/MeanderMate#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}

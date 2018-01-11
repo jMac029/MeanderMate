@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# that silly annoying ds_store file that macOS loves to use
+.DS_STORE
