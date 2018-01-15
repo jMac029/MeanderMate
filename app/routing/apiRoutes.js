@@ -1,35 +1,23 @@
-let meanders = require("../data/meanders")
+const meandererMaker = require("../data/meanderers.js")
+let meanderer = new meandererMaker()
 
 module.exports = function(app) {
 
-    app.get("/api/survey", function(req, res) {
-        res.json(survey)
+    app.get("/api/meanderers", function(req, res) {
+        res.json(meanderer.showMeanderers())
     })
 
-    app.get("/api/meanders", function(req, res) {
-        res.json(meanders)
-    })
-
-    app.post("/api/meanders", function(req, res) {
-        let newMeander = req.body
+    app.post("/api/meanderers", function(req, res) {
         console.log(req.body)
-    })
+        let newRequest = req.body
 
-    app.post("/api/surveySubmit", function(req, res) {
-        meanders.push(req.body)
-        console.log(req.body)
+        let newMeanderer = new meandererMaker(newRequest.name, newRequest.picture, newRequest.survey)
 
-        let newMeander = req.body
-        let meandersArray = []
+        newMeanderer.newMeanderer()
 
-        for (let i = 0; i < meandersArray; i++) {
-            var scoresDifference = 0
+        console.log(newMeanderer.closestMatch)
+        res.send(newMeanderer.closestMatch)
 
-            for (let j = 0; j < newMeander.length; j++) {
-                scoresDifference += (Math.abs(parseInt(meanders[i].scores[j]) - parseInt(newMeander[j])))
-            }
-            newMeander.push(scoresDifference)
-        }
     })
 
 
