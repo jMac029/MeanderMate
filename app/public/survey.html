@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Meander Survey</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Meandering Questions</h4>
+                </div>
+                <div class="panel-body">
+                    <form role="form" action="/api/surveySubmit" method="post">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="photo">Photo </label>
+                            <label class="control-label">Select File</label>
+                            <input id="photo" type="file" class="file">
+                        </div>
+                        <div class="btn-group">
+                            <p> Question 1 </p>
+                            <p> Your mind is always buzzing with unexplored ideas and plans. </p>
+                            <select id="q1">
+                                <option value="1">1(Strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly agree)</option>
+                            </select>
+                        </div>
+                        <p> Question 2 </p>
+                        <p> Generally speaking, you rely more on your experience than your imagination. </p>
+                        <div class="btn-group">
+                            <select id="q2">
+                                <option value="1">1(Strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly agree)</option>
+                            </select>
+                        </div>
+                        <p> Question 3 </p>
+                        <p> You find it easy to stay relaxed and focused even when there is some pressure. </p>
+                        <div class="btn-group">
+                            <select id="q3">
+                                <option value="1">1(Strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly agree)</option>
+                            </select>
+                        </div>
+                        <p> Question 4 </p>
+                        <p> You rarely do something just out of sheer curiosity. </p>
+                        <div class="btn-group">
+                            <select id="q4">
+                                <option value="1">1(Strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly agree)</option>
+                            </select>
+                        </div>
+                        <p> Question 5 </p>
+                        <p> People can rarely upset you. </p>
+                        <div class="btn-group">
+                            <select id="q5">
+                                <option value="1">1(Strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly agree)</option>
+                            </select>
+                        </div>
+                        <p> Question 6 </p>
+                        <p> It is often difficult for you to relate to other people’s feelings.</p>
+                        <div class="btn-group">
+                            <select id="q6">
+                                <option value="1">1(Strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly agree)</option>
+                            </select>
+                        </div>
+                        <p> Question 7 </p>
+                        <p> In a discussion, truth should be more important than people’s sensitivities.</p>
+                        <div class="btn-group">
+                            <select id="q7">
+                                <option value="1">1(Strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly agree)</option>
+                            </select>
+                        </div>
+                        <p> Question 8 </p>
+                        <p> You rarely get carried away by fantasies and ideas. </p>
+                        <div class="btn-group">
+                            <select id="q8">
+                                <option value="1">1(Strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly agree)</option>
+                            </select>
+                        </div>
+                        <p> Question 9 </p>
+                        <p> You think that everyone’s views should be respected regardless of whether they are supported by facts or not. </p>
+                        <div class="btn-group">
+                            <select id="q9">
+                                <option value="1">1(Strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly agree)</option>
+                            </select>
+                        </div>
+                        <p> Question 10 </p>
+                        <p> You feel more energetic after spending time with a group of people.</p>
+                        <div class="btn-group">
+                            <select id="q10">
+                                <option value="1">1(Strongly disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly agree)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <button type="submit" class="btn btn-primary submit" data-toggle="modal" id="submitButton">Submit</button>
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Best Match</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/api/meanders">API Meanders List</a> | <a href="https://github.com/jMac029/MeanderMate">GitHub Repo</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script type="text/javascript">
+    $("#submitButton").on("click", function() {
+        event.preventDefault()
+        let newMeander = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [
+                $("#q1").val().trim(),
+                $("#q2").val().trim(),
+                $("#q3").val().trim(),
+                $("#q4").val().trim(),
+                $("#q5").val().trim(),
+                $("#q6").val().trim(),
+                $("#q7").val().trim(),
+                $("#q8").val().trim(),
+                $("#q9").val().trim(),
+                $("#q10").val().trim()
+            ]
+        }
+        console.log(newMeander);
+        $.post("/api/surveySubmit", newMeander,
+            function(data) {
+                $("#name").text(data.name);
+                $("#photo").attr("src", data.photo);
+                // $("#myModal").text(data.name);
+            })
+    })
+</script>
