@@ -92,7 +92,7 @@
 
 
         <h3><strong>Q 6</strong></h3>
-        <h4>I stick to a tight itinerary.</h4>
+        <h4>My passport is full of stamps from all over the world.</h4>
         <div>
             <select data-placeholder="" class="chosen-select-no-single" id="q6" tabindex="8" <option value=""></option>
                     <option value=""></option>
@@ -195,7 +195,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p><a href="/api/meanderers">API Meanders List</a> | <a href="https://github.com/jMac029/MeanderMate">GitHub Repo</a></p>
+            <p><a href="/">Start Over</a> | <a href="/api/meanderers">API Meanders List</a> | <a href="https://github.com/jMac029/MeanderMate" target="_blank">GitHub Repo</a></p>
         </div>
     </footer>
 
@@ -203,6 +203,7 @@
     <script type="text/javascript">
         let newMeanderer = {}
         $("#submit").on("click", function() {
+            // function to validate the form and all responses have been selected before submitting
             function validateForm() {
                 var isValid = true;
                 $('.form-control').each(function() {
@@ -217,7 +218,7 @@
             }
             if (validateForm() == true) {
                 let surveyResults = [];
-                for (var i = 1; i < 11; i++) {
+                for (let i = 1; i < 11; i++) {
                     surveyResults.push($("#q" + i).val());
                 }
                 newMeanderer = {
@@ -225,15 +226,14 @@
                     "picture": $("#photo").val().trim(),
                     "survey": surveyResults
                 }
-                console.log(newMeanderer);
                 $.post("/api/meanderers", newMeanderer, function(data) {
                     if (data) {
-                        console.log("matched with:", data);
+                        //console.log("matched with:", data);
                         $("#meandererName").text(data.name);
                         $('#meandererImg').attr("src", data.photo);
                         $("#modal").modal('toggle');
                     } else {
-                        //fail
+                        alert("something went wrong please fill out the survey again.")
                     }
                 })
             } else {

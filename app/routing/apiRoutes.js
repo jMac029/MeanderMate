@@ -8,14 +8,14 @@ module.exports = function(app) {
     })
 
     app.post("/api/meanderers", function(req, res) {
-        console.log(req.body)
+        //console.log(req.body)
         let newRequest = req.body
 
         let newMeanderer = new meandererMaker(newRequest.name, newRequest.picture, newRequest.survey)
 
         newMeanderer.newMeanderer()
 
-        console.log(newMeanderer.closestMatch)
+        //console.log(newMeanderer.closestMatch)
         res.send(newMeanderer.closestMatch)
 
     })
